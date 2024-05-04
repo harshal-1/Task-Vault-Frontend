@@ -13,7 +13,7 @@ const AddBoardWidget = () => {
   const [name, setName] = useState('');
 
   const handleAddBoard = async () => {
-    await fetch(`${process.env.REACT_APP_API_URL}/boards/${_id}`, {
+    await fetch(`https://task-vault-backend-production.up.railway.app/boards/${_id}`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -25,7 +25,7 @@ const AddBoardWidget = () => {
     });
 
     const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/boards/${_id}`,
+      `https://task-vault-backend-production.up.railway.app/boards/${_id}`,
       {
         method: 'GET',
         headers: { Authorization: `Bearer ${token}` },

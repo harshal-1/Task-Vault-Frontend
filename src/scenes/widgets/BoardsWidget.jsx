@@ -10,7 +10,7 @@ const BoardsWidget = ({ userId }) => {
   const token = useSelector((state) => state.token);
 
   const getBoards = async () => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/boards/${userId}`, {
+    const response = await fetch(`https://task-vault-backend-production.up.railway.app/boards/${userId}`, {
       method: 'GET',
       headers: { Authorization: `Bearer ${token}` },
     });

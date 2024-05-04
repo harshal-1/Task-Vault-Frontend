@@ -49,7 +49,7 @@ const TaskWidget = ({ i, id, boardId, desc, boardUserId }) => {
 
   
   const updateTask = async (updatedDesc) => {
-    await fetch(`${process.env.REACT_APP_API_URL}/tasks/${id}`, {
+    await fetch(`https://task-vault-backend-production.up.railway.app/tasks/${id}`, {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -61,7 +61,7 @@ const TaskWidget = ({ i, id, boardId, desc, boardUserId }) => {
     });
 
     const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/boards/${boardUserId}`,
+      `https://task-vault-backend-production.up.railway.app/boards/${boardUserId}`,
       {
         method: 'GET',
         headers: { Authorization: `Bearer ${token}` },
@@ -73,7 +73,7 @@ const TaskWidget = ({ i, id, boardId, desc, boardUserId }) => {
   };
 
   const deleteTask = async () => {
-    await fetch(`${process.env.REACT_APP_API_URL}/tasks/${id}`, {
+    await fetch(`https://task-vault-backend-production.up.railway.app/tasks/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -81,7 +81,7 @@ const TaskWidget = ({ i, id, boardId, desc, boardUserId }) => {
     });
 
     const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/boards/${boardUserId}`,
+      `https://task-vault-backend-production.up.railway.app/boards/${boardUserId}`,
       {
         method: 'GET',
         headers: { Authorization: `Bearer ${token}` },

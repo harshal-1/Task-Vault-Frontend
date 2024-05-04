@@ -48,7 +48,7 @@ const Form = () => {
 
   const register = async (values, onSubmitProps) => {
     const savedUserResponse = await fetch(
-      `${process.env.REACT_APP_API_URL}/auth/register`,
+      `https://task-vault-backend-production.up.railway.app/auth/register`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -64,7 +64,7 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch(`${process.env.REACT_APP_API_URL}/auth/login`, {
+    const loggedInResponse = await fetch(`https://task-vault-backend-production.up.railway.app/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),

@@ -70,7 +70,7 @@ const BoardWidget = ({ boardId, boardUserId, name, tasks }) => {
   };
 
   const addTask = async (desc) => {
-    await fetch(`${process.env.REACT_APP_API_URL}/tasks/${boardId}`, {
+    await fetch(`https://task-vault-backend-production.up.railway.app/tasks/${boardId}`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -82,7 +82,7 @@ const BoardWidget = ({ boardId, boardUserId, name, tasks }) => {
     });
 
     const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/boards/${boardUserId}`,
+      `https://task-vault-backend-production.up.railway.app/boards/${boardUserId}`,
       {
         method: 'GET',
         headers: { Authorization: `Bearer ${token}` },
@@ -94,7 +94,7 @@ const BoardWidget = ({ boardId, boardUserId, name, tasks }) => {
   };
 
   const updateBoard = async (updatedName) => {
-    await fetch(`${process.env.REACT_APP_API_URL}/boards/${boardId}`, {
+    await fetch(`https://task-vault-backend-production.up.railway.app/boards/${boardId}`, {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -106,7 +106,7 @@ const BoardWidget = ({ boardId, boardUserId, name, tasks }) => {
     });
 
     const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/boards/${boardUserId}`,
+      `https://task-vault-backend-production.up.railway.app/boards/${boardUserId}`,
       {
         method: 'GET',
         headers: { Authorization: `Bearer ${token}` },
@@ -118,7 +118,7 @@ const BoardWidget = ({ boardId, boardUserId, name, tasks }) => {
   };
 
   const deleteBoard = async () => {
-    await fetch(`${process.env.REACT_APP_API_URL}/boards/${boardId}`, {
+    await fetch(`https://task-vault-backend-production.up.railway.app/boards/${boardId}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -126,7 +126,7 @@ const BoardWidget = ({ boardId, boardUserId, name, tasks }) => {
     });
 
     const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/boards/${boardUserId}`,
+      `https://task-vault-backend-production.up.railway.app/boards/${boardUserId}`,
       {
         method: 'GET',
         headers: { Authorization: `Bearer ${token}` },
